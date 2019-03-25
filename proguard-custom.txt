@@ -96,8 +96,14 @@
 }
 
 # Remove debug logs in release build
+# see: https://stackoverflow.com/questions/13218772/removing-log-call-using-proguard
 -assumenosideeffects class android.util.Log {
-    public static *** d(...);
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
 }
 
 # These classes contain references to external jars which are not included in the default MobileFirst project.
@@ -111,5 +117,6 @@
 -dontwarn android.net.SSLCertificateSocketFactory
 -dontwarn android.net.http.*
 
-# fix build issues with plugin.google.maps
+# fix build warning with plugin.google.maps
+# Warning: plugin.google.maps.PluginMarkerCluster: can't find referenced method 'java.util.concurrent.ConcurrentHashMap$KeySetView keySet()' in library class java.util.concurrent.ConcurrentHashMap
 -dontwarn plugin.google.maps.PluginMarkerCluster
