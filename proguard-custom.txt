@@ -129,4 +129,4 @@
 # see: https://medium.com/@trionkidnapper/stripping-log-statements-using-proguard-73dedc68ee97
 -keep class **
 -keepclassmembers class *{*;}
--keepattributes *
+#-keepattributes *
