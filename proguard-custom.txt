@@ -98,7 +98,7 @@
 # Remove debug logs in release build
 # see: https://stackoverflow.com/questions/13218772/removing-log-call-using-proguard
 # Remove debug logs in release build
--assumenosideeffects public android.util.Log {
+-assumenosideeffects class android.util.Log {
     public static int d(...);
     public static int v(...);
     public static int i(...);
