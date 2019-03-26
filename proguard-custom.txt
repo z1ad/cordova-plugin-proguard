@@ -98,8 +98,12 @@
 # Remove debug logs in release build
 # see: https://stackoverflow.com/questions/13218772/removing-log-call-using-proguard
 # Remove debug logs in release build
--assumenosideeffects class android.util.Log {
-    public static *** d(...);
+-assumenosideeffects public class android.util.Log {
+    public static int d(...);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int e(...);
 }
 
 # These classes contain references to external jars which are not included in the default MobileFirst project.
