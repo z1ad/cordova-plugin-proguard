@@ -97,7 +97,10 @@
 
 # Remove debug logs in release build
 # see: https://stackoverflow.com/questions/13218772/removing-log-call-using-proguard
-# Remove debug logs in release build
+# and: https://support.brightcove.com/removing-android-log-messages
+# and: https://medium.com/@trionkidnapper/stripping-log-statements-using-proguard-73dedc68ee97
+# and: https://zserge.com/blog/log.html
+# note: doesnt work...
 -assumenosideeffects class android.util.Log {
     public static int d(...);
     public static int v(...);
@@ -120,3 +123,10 @@
 # fix build warning with plugin.google.maps
 # Warning: plugin.google.maps.PluginMarkerCluster: can't find referenced method 'java.util.concurrent.ConcurrentHashMap$KeySetView keySet()' in library class java.util.concurrent.ConcurrentHashMap
 -dontwarn plugin.google.maps.PluginMarkerCluster
+
+
+# dont remove any classes
+# see: https://medium.com/@trionkidnapper/stripping-log-statements-using-proguard-73dedc68ee97
+#-keep class **
+#-keepclassmembers class *{*;}
+#-keepattributes *
