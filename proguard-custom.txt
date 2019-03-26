@@ -128,10 +128,11 @@
 # dont remove any classes (just obfuscate)
 # see: https://medium.com/@trionkidnapper/stripping-log-statements-using-proguard-73dedc68ee97
 -keep class **
--keepclassmembers class *{*;}
+#-keepclassmembers class *{*;}
 #-keepattributes *
 
 # Don't keep the local variables attributes (LocalVariableTable and LocalVariableTypeTable are dropped).
 -keepattributes Exceptions,Signature,Deprecated,SourceFile,SourceDir,LineNumberTable,Synthetic,EnclosingMethod,RuntimeVisibleAnnotations,RuntimeInvisibleAnnotations,RuntimeVisibleParameterAnnotations,RuntimeInvisibleParameterAnnotations,AnnotationDefault,InnerClasses,*Annotation*
 
 # see: https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#shrinkingoptions
+-dontshrink
