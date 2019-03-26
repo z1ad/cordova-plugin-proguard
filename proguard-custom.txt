@@ -125,8 +125,8 @@
 -dontwarn plugin.google.maps.PluginMarkerCluster
 
 
-# dont remove any classes
+# dont remove any classes (just obfuscate)
 # see: https://medium.com/@trionkidnapper/stripping-log-statements-using-proguard-73dedc68ee97
-#-keep class **
-#-keepclassmembers class *{*;}
-#-keepattributes *
+-keep class **
+-keepclassmembers class *{*;}
+-keepattributes *
